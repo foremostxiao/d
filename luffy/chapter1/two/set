@@ -1,0 +1,88 @@
+# 可以使用大括号 { } 或者 set() 函数创建集合，注意：
+# 创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。
+
+
+iphone7 = ['alex','rain','jack','old_driver']
+iphone8 = ['alex','shanshan','jack','old_boy']
+print(iphone7&iphone8)
+# both_buy = []
+# for name in iphone7:
+#     if name in iphone8:
+#         both_buy.append(name)
+# print(both_buy)
+
+# collections 无序的，不重复的数据组合，
+#去重，把一个列表变成集合，就自动去重了
+#关系测试，测试两组数据之间的交集，差集，并集等关系
+#集合表示 set
+
+# s={}
+# print(type(s))
+#
+# s.add()
+# s.copy()
+# s.difference()
+# s.discard()#丢弃
+# s.intersection()
+# s.difference_update()
+# s.isdisjoint()
+
+#集合是无序的，
+# 集合中的元素有三个特征：
+#
+# 1.确定性（元素必须可hash）
+#
+# 2.互异性（去重）
+#
+# 3.无序性（集合中的元素没有先后之分），如集合{3,4,5}和{3,5,4}算作同一个集合。
+#
+# 注意：集合存在的意义就在于去重和关系运算
+
+# 数列sequence
+#
+# 集合set
+#
+# 交集intersection
+#
+# 并集union
+#
+
+
+# A⊆B A is a
+
+# 空集 empty
+# set
+
+
+# s={1,2,3,4,5,1,'a','d'}
+# print(s)
+
+l= {'张三','李四','老男孩'}
+p = {'张三','李四','alex'}
+
+# #交集
+# print(l.intersection(p))
+# print(l&p)
+#
+# #并集
+# print(l.union(p))
+# print(l|p)
+#
+# #差集
+# print(l.difference(p))
+# print(l-p)
+# print(p-l)
+
+# 对称差集，把不交集的部分取出
+print(l.symmetric_difference(p))
+print(l^p)
+
+#  包含关系
+# 两个集合之间一般有三种关系，相交、包含、不相交。在Python中分别用下面的方法判断：
+#
+# set.isdisjoint(s)：-----是不是不相交----判断两个集合是不是不相交
+# set.issuperset(s)：判断集合是不是包含其他集合，等同于a>=b
+# set.issubset(s)：判断集合是不是被其他集合包含，等同于a<=b
+
+print(set.isdisjoint(l,p))
+

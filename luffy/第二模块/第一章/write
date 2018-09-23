@@ -1,0 +1,30 @@
+# with open('test.txt','w',encoding='utf-8') as file:
+#     li = 'beijing haha'
+#     f = file.write(li)
+li ='中国'
+li1 = ['1','2','3']
+# print(type(li1))
+# print(li1)
+with open('test.txt','r+',encoding='utf-8') as file:
+    f = file.read()
+    #print(f)
+    file.seek(0)
+    file.truncate()
+    # s = '123'
+    # file.write(s)
+    # print(s)
+    # f1 = file.write(li)
+    # print(type(f1))
+    # # print(f1)
+    # f2 = file.writable()
+    # print(type(f2))
+    # print(f2)
+    # f = file.readlines(15)
+    # print(f)
+
+    #
+    # file.seek(0)  # 字节
+    #
+    # f = file.read()
+    # f.truncate(1)
+    # print(f)

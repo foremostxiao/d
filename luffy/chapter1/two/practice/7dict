@@ -1,0 +1,34 @@
+
+
+dic = {'k1': "v1", "k2": "v2", "k3": [11,22,33]}
+
+# 1 请循环输出所有的key
+print(dic.keys())
+
+# 2 请循环输出所有的value
+print(dic.values())
+
+# 3 请循环输出所有的key和value
+print(dic.items())
+print(dic)
+
+# 4 请在字典中添加一个键值对，"k4": "v4"，输出添加后的字典
+dic['k4'] = 'v4'
+print(dic)
+
+# 5 请在修改字典中“k1”对应的值为“alex”，输出修改后的字典
+
+dic['k1'] = 'alex'
+print(dic)
+
+# 6 请在k3对应的值中追加一个元素44，输出修改后的字典
+
+dic['k3'].append(44)
+print(dic)
+
+# 7 请在k3对应的值的第1个位置插入个元素18，输出修改后的字典
+
+dic['k3'].insert(0,18)
+print(dic)
+
+# 8

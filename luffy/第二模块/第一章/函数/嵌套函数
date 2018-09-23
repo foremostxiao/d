@@ -1,0 +1,35 @@
+
+# 1
+name = 'alex'
+def change_name():
+    name = 'alex2'
+    def change_name2():
+        name = 'alex3'
+        print("3rd:",name)
+    change_name2()
+    print('2nd:',name)
+change_name()
+print('1st:',name)
+
+
+# 2 当里面的函数没有值时，由内向外去找
+age = 19
+def fun1():
+    age = 73
+    print(age)
+    def fun2():
+        print(age)
+    fun2()
+fun1()
+
+# 3
+age = 19
+def fun1():
+    global age
+
+    def fun2():
+        print(age)
+    age = 73
+    fun2()
+fun1()
+print(age)

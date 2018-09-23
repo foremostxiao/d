@@ -1,0 +1,90 @@
+# 带有参数的装饰器
+# import time
+#
+#
+# def deco(func):
+#     def wrapper(a, b):
+#         startTime = time.time()
+#         func(a, b)
+#         endTime = time.time()
+#         msecs = (endTime - startTime) * 1000
+#         print("time is %d ms" % msecs)
+#
+#     return wrapper
+#
+#
+# @deco
+# def func(a, b):
+#     print("hello，here is a func for add :")
+#     time.sleep(1)
+#     print("result is %d" % (a + b))
+#
+#
+# if __name__ == '__main__':
+#     f = func
+#     f(3, 4)
+
+# 既不需要侵入，也不需要函数重复执行
+# import time
+# def deco(func):
+#     def wrapper():
+#         startTime = time.time()
+#         func()
+#         endTime = time.time()
+#         msecs = (endTime - startTime) * 1000
+#         print("time is %d ms" % msecs)
+#
+#     return wrapper
+# @deco
+# def func():
+#     print("hello")
+#     time.sleep(1)
+#     print("world")
+#
+#
+# if __name__ == '__main__':
+#     f = func  # 这里f被赋值为func，执行f()就是执行func()
+#     f()
+
+# from  functools import  wraps
+# def outer(func):
+#     @wraps(func)
+#     def inner(*args,**kwargs):
+#         print("start")
+#         ret=func()
+#         print("end")
+#         return ret
+#     return inner
+# @outer
+# def login():
+#     print("login")
+# login()
+
+# mystuff={'apple':'I AM Apples'}
+# print(mystuff['apple'])
+# for index,i in enumerate(mystuff):
+#     print(index,i)
+#
+dic = {
+    'andy':{
+        'age': 23,
+        'city': 'beijing',
+        'skill': 'python'
+    },
+    'william': {
+        'age': 25,
+        'city': 'shanghai',
+        'skill': 'js'
+    }
+}
+
+fw = open("test.txt",'w+')
+fw.write(str(dic))      #把字典转化为str
+fw.close()
+
+fr = open("test.txt",'r+')
+dic = eval(fr.read())   #读取的str转换为字典
+print(dic)
+fr.close()
+
+print(str(dic))

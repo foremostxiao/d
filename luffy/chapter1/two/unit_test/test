@@ -1,0 +1,103 @@
+import sys
+goods = [
+{"name": "电脑", "price": 1999},
+{"name": "鼠标", "price": 10},
+{"name": "游艇", "price": 20},
+{"name": "美女", "price": 998},
+
+]
+
+#  \033[1;32;40m   \033[0m
+
+# 用户名和密码
+user_info = {'aa':'123',
+             'bb':'456',
+             'cc':'789',
+             }
+
+
+#定义一个余额列表
+# balance = []
+# #定义一个购物车列表
+# shopping_car = []
+#
+# user_name = input('用户名：').strip()
+# pass_word = input('密码：').strip()
+# balance_f = input('余额：')
+#
+#
+# name_balance ={ user_name:balance}
+import json
+
+# -----------------------------------------------------------------------------
+# python-将字符串转换为字典
+# json越来越流行，通过python获取到json格式的字符串后，可以通过eval函数转换成dict格式：
+#
+# >>> a='{"name":"yct","age":10}'
+#
+# >>> eval(a)
+# {'age': 10, 'name': 'yct'}
+
+#
+# str = "{'params':{'id':222,'offset':0},'nodename':'0'}"
+# print(type(str))
+# # params = json.loads(str)
+# print(type(eval(str)))
+# dict = eval(str)
+# print(eval(str))
+# dict1 = dict['params']
+#
+# print(dict1)
+#
+# print(len(dict['nodename']))#   '' 位空输出为0,,,如果中间有空格也算一个空格为 1
+# # print (params['params']['id'])
+# # print(dict(str))
+
+# d={'ac':'15','av':'18','gd':'24','bb':'33'}
+# str_d = str(d)
+# #print(str_d)
+#
+# # file = open('out.txt','w')
+#
+#
+# with open('out.txt','w') as file:
+#
+#     f = file.write(str_d)
+#
+# file = open('out.txt','r')
+# with open('out.txt','r') as file1:
+#     f1 = file.read()
+#     print(f1)
+#     print(type(f1))
+#     f2 = eval(f1)
+#     print(type(f2))
+#     print(f2['ac'])
+#
+# f2['xiaolei'] = 123
+# print(f2)
+#
+# d ={'a':{'b':'c','d':'e'}}
+# b = d['a']['b']
+# c= d ['a']['d']
+# print(b,'-----------',c)
+
+#
+# file = open('out.txt','a')
+# with open('out.txt','a') as file3:
+#
+#     f3 = file.write(str(d1))
+#
+# file4 = open('out.txt','r')
+#
+# with open('out.txt','r') as file4:
+#     f4 = file.read()
+#     f5 = eval(f4)
+#     print(f4['xiao'])
+
+
+#  字典可以为空吗
+s='abc'
+if s[1]=='b':
+    print('111')
+else:
+    print('22')

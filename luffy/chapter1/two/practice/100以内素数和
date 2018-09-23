@@ -1,0 +1,19 @@
+
+# 从2开始,0、1不是素数
+
+L = []
+for i in range(2,10):
+    flag = True
+    for j in range(2,i): #这就不包括1和本身了
+        if i % j == 0:
+            flag = False
+            break
+    if flag == True:
+        L.append(i)
+print(sum(L))
+
+
+
+
+
+

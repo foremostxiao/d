@@ -1,0 +1,276 @@
+# 数据结构：
+
+#
+# 功能要求：
+# 基础要求：
+#
+# 1、启动程序后，输入用户名密码后，让用户输入工资，然后打印商品列表
+#
+# 2、允许用户根据商品编号购买商品
+#
+# 3、用户选择商品后，检测余额是否够，够就直接扣款，不够就提醒
+#
+# 4、可随时退出，退出时，打印已购买商品和余额
+#
+# 5、在用户使用过程中， 关键输出，如余额，商品已加入购物车等消息，需高亮显示
+#
+#
+# 扩展需求：
+#
+# 1、用户下一次登录后，输入用户名密码，直接回到上次的状态，即上次消费的余额什么的还是那些，再次登录可继续购买
+#
+# 2、允许查询之前的消费记录
+
+import sys
+goods = [
+{"name": "电脑", "price": 1999},
+{"name": "鼠标", "price": 10},
+{"name": "游艇", "price": 20},
+{"name": "美女", "price": 998},
+
+]
+
+#  \033[1;32;40m   \033[0m
+
+# 用户名和密码
+user_info = {'aa':'123',
+             'bb':'456',
+             'cc':'789',
+             }
+
+
+#定义一个余额列表
+balance = []
+#定义一个购物车列表
+shopping_car = []
+
+
+# while True:
+#     user_name = input('用户名：')
+#     pass_word = input('密码：')
+#     if user_name in user_info and pass_word == user_info[user_name]:
+#         print('\t',"\033[1;32;40m登录成功，欢迎您！\033[0m")
+#         break
+#     else:
+#         print('\t','\033[1;32;40m用户名/密码错误,请重新输入\033[0m')
+#         continue
+#
+# # 打开余额文件，查看是否有余额，
+# with open('balance_file.txt','r') as balance_f:
+#     balance_list = str(balance_f.read())
+#     # for line in balance_list:
+#     #     file_str = str(balance_list)
+#     data = (balance_list)
+#
+# if user_name not in data:
+# #     salary = int(input('请输入您的工资：').strip())
+# #     # 将工资添加到自定义的余额列表
+# #     balance.append(salary)
+#
+# # 将余额添加到余额列表
+# else:
+#     # balance_list 只有最新消费后显示的一个余额 所以用balance_list[0]
+#     history_balance = data[user_name]
+#
+#     # 将余额文件中的余额，添加到自定义的余额列表
+#     balance.append(history_balance)
+# while True:
+#     print('-----------商品列表--------------')
+#     for index,good in enumerate(goods):
+#         print((index,good["name"],good["price"]))
+#     choice = input('请选择商品编号（q退出，f查询历史购买记录）：').strip()
+#     if choice.isdigit():
+#         choice = int(choice)
+#         if choice in range(0,len(goods)):
+#             if balance[0] >= goods[choice]["price"]:
+#                 # 添加字典商品列表的字典形式到自定义的shopping_car列表中
+#                 shopping_car.append(goods[choice])
+#
+#                 # 商品：价格，，，，history_data，变成字符串的形式
+#                 history_data = goods[choice]["name"] + ':' + str(goods[choice]["price"]) + '\n'
+#
+#                 # 把购物记录写入 历史购物文件中
+#                 with open('history_file.txt','a',encoding='utf-8') as history_f:
+#                     history_f.write(str(history_data))
+#                 balance[0] = balance[0] - goods[choice]["price"]
+#                 print('\t','\033[1;32;40m购买成功\033[0m')
+#             else:
+#                 print('\t','\033[1;32;40m余额不足\033[0m')
+#         else:
+#             print('\t','\033[1;32;40m您输入的商品编号不存\033[0m')
+#
+#     elif choice == 'q':
+#         if len(shopping_car) > 0:
+#             print("您购买商品如下")
+#         else:
+#             print('您没有购买商品')
+#         for index ,good in enumerate(shopping_car):
+#             print((index,good["name"],good["price"]))
+#         print('\t','\033[1;32;40m余额为\033[0m',balance[0])
+#
+#         with open('balance_file.txt','r+') as balance_f:
+#             #余额文件只有一个最新的余额
+#             dict_balace = {user_name:balance[0]}
+#             balance_f.write(str(dict_balace)+'\n')
+#         #exit(0)为正常退出
+#         sys.exit(0)
+#
+#
+#     elif choice == 'f':
+#
+#         with open('history_file.txt', 'r', encoding='utf-8') as history_f:
+#
+#             # readlines()自动将文件内容分析成一个行的列表
+#             history_list = history_f.readlines()
+#         if len(history_list) == 0:
+#             print('没有购买记录')
+#         else:
+#             print('购物记录如下：')
+#             # Python split() 通过指定分隔符对字符串进行切片
+#             for i in (history_list):
+#                 # (name, price) = i.strip('\n')
+#                 print(i.strip('\n'))
+#
+
+dict = {'name': '123'}
+while True:
+    user_name = input('用户名：').strip()
+    pass_word = input('密码：').strip()
+    if user_name in user_info and pass_word == user_info[user_name]:
+        print('\t',"\033[1;32;40m登录成功，欢迎您！\033[0m")
+        break
+    else:
+        print('用户名/密码错误,请重新输入')
+        continue
+
+# 打开余额文件，查看是否有余额，
+file = open('balance_file.txt','a')
+with open('balance_file.txt','r') as balance_f:
+
+    # readlines() 自动将文件内容分析成一个行的列表,,,,,余额只有最新的一个
+    balance_list = balance_f.read()
+    #balance_dict = eval(balance_list)
+
+
+if user_name not in balance_list:
+    salary = int(input('请输入您的工资：').strip())
+    # 将工资添加到自定义的余额列表
+    balance.append(salary)
+
+# 将余额添加到余额列表
+else:
+    # balance_list 只有最新消费后显示的一个余额 所以用balance_list[0]
+    balance_dict = eval(balance_list)
+
+    history_balance = int(balance_dict[user_name])
+    #.strip('\n'))
+
+    # 将余额文件中的余额，添加到自定义的余额列表
+    balance.append(history_balance)
+while True:
+    print('-----------商品列表--------------')
+    for index,good in enumerate(goods):
+        print((index,good["name"],good["price"]))
+    choice = input('请选择商品编号（q退出，f查询历史购买记录）：').strip()
+
+    if choice.isdigit():
+        choice = int(choice)
+        if choice in range(0,len(goods)):
+            if balance[0] >= goods[choice]["price"]:
+                # 添加字典商品列表的字典形式到自定义的shopping_car列表中
+                shopping_car.append(goods[choice])
+
+                # 商品：价格,history_data，变成字符串的形式
+                history_data = goods[choice]["name"]+':'+str(goods[choice]["price"])+'\n'
+
+                # 把购物记录写入 历史购物文件中
+                file = open(user_name + pass_word + '.txt', 'a')
+                with open(user_name + pass_word + '.txt', 'a', encoding='utf-8') as history_f:
+                    history_f.write(history_data)
+                balance[0] = balance[0] - goods[choice]["price"]
+                print('\t',"\033[1;32;40m购买成功\033[0m")
+            else:
+                print('\t',"\033[1;32;40m余额不足\033[0m")
+        else:
+            print('您输入的商品编号不存')
+
+    # 退出
+    elif choice == 'q':
+        if len(shopping_car) > 0:
+            print("您购买商品如下")
+        else:
+            print('您没有购买商品')
+        for index ,good in enumerate(shopping_car):
+            print((index,good["name"],good["price"]))
+        print('\t',"\033[1;32;40m余额为\033[0m",balance[0])
+
+# w 写入并覆盖
+        with open('balance_file.txt','w') as balance_f:
+            #余额文件只有一个最新的余额
+
+            dict[user_name] = balance[0]
+            (balance_f.seek(2)).write(str(dict)+'\n')
+        #exit(0)为正常退出
+        sys.exit(0)
+
+    # 查看历史购物记录
+    elif choice == 'f':
+        file = open(user_name + pass_word + '.txt', 'a')
+        with open(user_name+pass_word+'.txt','r',encoding='utf-8') as history_f:
+            #readlines()自动将文件内容分析成一个行的列表
+            history_list = history_f.readlines()
+        if len(history_list) == 0:
+            print('没有购买记录')
+        else:
+            print("\033[1;32;40m购物记录如下：\033[0m")
+            # Python split() 通过指定分隔符对字符串进行切片
+            for i in (history_list):
+
+                print('\t',i.strip('\n'))
+
+    else:
+        print("\033[1;32;40m输入错误,请重新输入\033[0m")
+        continue
+
+
+
+# user_info = {'aa':'123',
+#              'bb':'456',
+#              'cc':'789',
+#              }
+#
+# user_name = input('用户名：')
+# pass_word = input('密码：')
+# user_wage = int(input('请输入工资：').strip())
+# shopping_car = []
+# s1 = []
+# s2 = []
+# s3 = []
+# shoppinglist = []
+# while True:
+#     if user_name in user_info and pass_word == user_info[user_name]:
+#
+#         print('-----------商品列表--------------')
+#         for index,i in enumerate(goods):
+#             print(index,i)
+#         choice = input('请选择商品序号(q退出)：').strip()
+#         if choice == 'q':
+#             s1.append(user_name)
+#             s2.append(user_info[user_name])
+#             s3.append(user_wage)
+#             shoppinglist = shopping_car + s1 + s2 +s3
+#             print(f"{s1}{s2}\033[1;31;40m余额：{user_wage},已购买商品：{shopping_car}\033[0m",'\n',shoppinglist)
+#             exit()
+#         if int(choice) in range(0,len(goods)):
+#
+#             while True:
+#                 if user_wage >= goods[int(choice) ]['price']:
+#                     user_wage = user_wage - goods[int(choice) ]['price']
+#                     shopping_car.append(goods[int(choice)])
+#
+#                     print('\033[1;31;40m商品已加入购物车！\033[0m')
+#                     break
+#                 else:
+#                     print("\033[1;31;40m余额不足\033[0m")
+#                     break
+

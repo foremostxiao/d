@@ -1,0 +1,1 @@
+{'alex': {'user_name': 'alex', 'pass_word': 'abc123', 'age': '24', 'position': 'Engineer', 'department': 'IT'}, 'rain': {'user_name': 'rain', 'pass_word': 'efg123', 'age': '25', 'position': 'Teacher', 'department': 'Teching'}}

@@ -1,0 +1,50 @@
+
+# 13、有两个列表-----------------转化为集合-----------------
+#
+l1 = [11,22,33]
+
+l2 = [22,33,44]
+#
+# 1 获取内容相同的元素列表
+l3 = []
+for i in l1:
+    if i in l2:
+        l3.append(i)
+print(l3)
+
+# 先转化为集合运算在化为列表，，交集
+print(list(set(l1)&set(l2)))
+print(type(set(l1)))
+
+# 2 获取l1中有，l2中没有的元素列表
+l3 = []
+for i in l1:
+    if i not in l2:
+        l3.append(i)
+print(l3)
+
+# 先转化为集合运算在化为列表，，，差集
+print(list(set(l1)-set(l2)))
+
+
+# 3 获取l2中有，l1中没有的元素列表
+l3 = []
+for i in l2:
+    if i not in l1:
+        l3.append(i)
+print(l3)
+
+# 先转化为集合运算在化为列表
+print(list(set(l2)-set(l1)))
+
+
+# 4 获取l1和l2中内容都不同的元素
+l1 = [11,22,33]
+
+l2 = [22,33,44]
+
+# 先转化为集合运算在化为列表，，，对称差集：l^p
+print(list(set(l1)^set(l2)))
+
+
+

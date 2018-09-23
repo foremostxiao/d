@@ -1,0 +1,8 @@
+2018-08-29 16:31:13,815--atm_user--INFO--Start print log
+2018-08-29 16:31:13,815--atm_user--DEBUG--Do something
+2018-08-29 16:31:13,815--atm_user--WARNING--Something maybe fail.
+2018-08-29 16:31:13,815--atm_user--INFO--Finish
+2018-08-29 16:31:17,437--atm_user--INFO--Start print log
+2018-08-29 16:31:17,437--atm_user--DEBUG--Do something
+2018-08-29 16:31:17,437--atm_user--WARNING--Something maybe fail.
+2018-08-29 16:31:17,437--atm_user--INFO--Finish

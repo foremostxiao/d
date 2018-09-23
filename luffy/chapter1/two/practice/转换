@@ -1,0 +1,48 @@
+
+#  转换
+#
+# 1 将字符串s = "alex"转换成列表
+s = "alex"
+print(list(s))
+
+
+# 2 将字符串s = "alex"转换成元祖
+print(tuple(s))
+
+# 3 将列表li = ["alex", "seven"]转换成元组
+li = ["alex", "seven"]
+print(tuple(li))
+
+# 4 将元祖tu = ('Alex', "seven")转换成列表
+tu = ('Alex', "seven")
+print(list(tu))
+
+# 5 将列表li = ["alex", "seven"]转换成字典且字典的key按照10开始向后递增
+li = ["alex", "seven"]
+# print(dict(li))  直接转换错误
+print(dict(zip([i for i in range(10, len(li)+10)], li)))
+dict = {}
+for i,name in enumerate(li,10):
+    #print(i)
+    dict[i] = name
+print(dict,end=' ')
+
+# python 列表转为字典的两个小方法---------------列表不可以转换为字典---------------
+# 1、现在有两个列表，list1 = ['key1','key2','key3']和list2 = ['1','2','3']，
+# 把他们转为这样的字典：{'key1':'1','key2':'2','key3':'3'}
+#
+# list1 = ['key1','key2','key3']
+#
+# list2 = ['1','2','3']
+#
+# print(dict(zip(list1,list2)))
+# print([i for i in range(10, len(li)+10)])
+# #
+#
+#
+# # 2、将嵌套列表转为字典，有两种方法，
+#
+# new_list= [['key1','value1'],['key2','value2'],['key3','value3']]
+#
+# print(dict(list))
+#

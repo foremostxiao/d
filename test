@@ -1,0 +1,47 @@
+
+#将字符串按空格分割后按升序排序
+sentence=['All', 'good', 'things', 'come', 'to' ,'those', 'who', 'wait.']
+
+print("默认为 index=-1，删除最后一个列表值：",sentence.pop(-1),"\n")
+print("默认删除最后一个列表值： ",sentence.pop(),"\n")
+print("删除第一个元素：",sentence.pop(0),"\n")
+print("删除第三个元素：",sentence.pop(2),"\n")
+print("输出剩余元素：",sentence)
+
+
+#sentence="All good things come to those who wait."
+#sentence_spilt=sentence.split()
+#print(sorted(sentence_spilt))
+
+print()
+
+sentence1="[('All', 'A', 15), ('good', 'B', 12), ('things', 'B', 10)]"
+
+"""
+hao
+hao
+hao
+hao
+"""
+
+ #Sorting  cmp:
+#L = "[('b',2),('a',1),('c',3),('d',4)]"
+#print(sorted(L, cmp=lambda x,y:cmp(x[1],y[1])))
+#[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+#Sorting  keys:
+#L =['b',2),('a',1),('c',3),('d',4)]
+#print (sorted(L, key=lambda x:x[1]))
+#[('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+#Sorting  reverse:
+#print (sorted([5, 2, 3, 1, 4], reverse=True))
+#[5, 4, 3, 2, 1]
+#print (sorted([5, 2, 3, 1, 4], reverse=False))
+#[1, 2, 3, 4, 5]
+
+
+
+print(sorted({8: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}))
+#输出为：[2, 3, 4, 5, 8]
+
+print(sorted("This is a test string from Andrew".split(), key=str.lower))

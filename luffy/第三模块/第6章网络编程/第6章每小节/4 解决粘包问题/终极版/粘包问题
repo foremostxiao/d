@@ -1,0 +1,33 @@
+socket粘包：　　
+socket 交互send时，连续处理多个send时会出现粘包，soket会把两条send作为一条send强制发送，会粘在一起。
+send发送会根据recv定义的数值发送一个固定的数值，如果最后一次，所剩的数值小于recv定义数就会连带两条send数据同时发送，发生粘包状况。
+
+https://www.cnblogs.com/xiangsikai/p/8137355.html
+解决方案：
+方案1：可以使用time.sleep 在两send之间加上时间（不建议）
+方案2：可以在send两条之间加入一条 conn.recv(1024)　　　　　　　　　　　　
+
+服务端
+conn.send(str(len(cmd_res.encode())).encode("utf-8"))
+client_ack = conn.recv(1024) #wait client to confirm
+conn.send(cmd_res.encode("utf-8"))
+
+客户端
+client.send("准备好接收了,loser可以发了".encode("utf-8"))
+
+
+原理：recv在接收数据时是一个堵塞状态，自动卡在中间，
+　　  客户会自动返回client_ack的数据信息，相当于两个
+　　  send之间多了一次交互，就不会出现粘包情况。
+
+　　　　　　
+
+方案3：通过if判断实现粘包解决（推荐）
+复制代码
+while 总数值 > 递增接收数据:
+    if 总数值 - 递增接收数据 > recv(1024): #比定义值大就成立
+        size = 1024
+    else: #最后一次
+        size = 总数值 - 递增接收数据 #剩的数值
+    recv(size)   #赋值给 recv
+复制代码

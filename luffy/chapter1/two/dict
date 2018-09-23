@@ -1,0 +1,77 @@
+# names={('Alex',26,'技术部','工程师',13651054608),
+#        ('shanshan',25,'公关部','野模',13374245235),
+#        ('龙婷', 24, '设计部', 'UI', 13824234452)}
+# print(names)
+# 字典里面不可以含有list----unhashable type: 'list'
+# 字典里面可以放元组 tuple
+
+# 字典写 key查值
+
+#------字典----
+# ---字典中--键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行，如下实例：
+# ---不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住---
+# names={'Alex':[26,'技术部','工程师',13651054608],
+#        'shanshan':[25,'公关部','野模',13374245235],
+#        '龙婷':[24, '设计部', 'UI', 13824234452]}
+# print(names)
+# print(names['Alex'][0])
+# del names['Alex']
+# print(names)
+# # 输出变量类型
+# type(names)
+# print(type(names))
+# names.pop('shanshan')
+# print(names)
+
+# print(names.get('xiaolei'))
+
+#---增加
+# names['xiaolei']=[25,'武汉','on the way to python','1284564']
+# print(names)
+#
+# #---修改---
+# names['xiaolei']=['on the way to python','1284564']
+# print(names)
+#
+# #---查找---字典通过key
+# print(names['Alex'])
+#'Alex' in names
+
+#--没有返回值为空 ----------------------none
+#print(names.get('Alex'))
+
+#---多级字典嵌套---
+# names={'Alex':{'技术部':'工程师'},
+#        'shanshan':{'公关部':'野模'},
+#        '龙婷':{'设计部':'UI'}}
+# print(names['Alex']['技术部'])
+# # print(names.values(['技术部']))
+#
+# #-----删除-----
+# #-删除并返回删除的值pop()---
+# print(names.pop('Alex'))
+# print(names)
+
+# del
+# 能删单一的元素也能清空字典，清空只需一项操作。
+#
+# 显示删除一个字典用del命令，如下实例：
+# del dic['k1']
+
+
+# 合并--update
+#names.update(names1)
+
+# get----获取--如果没有返回为空
+
+#---循环---
+names={'Alex':{'技术部':'工程师'},
+       'shanshan':{'公关部':'野模'},
+       '龙婷':{'设计部':'UI'}}
+for k in names:
+    print(k)
+
+# 字典无 append（）
+names['xaiolei']=['xiaolei123']
+print(names)
+

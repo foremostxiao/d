@@ -1,0 +1,92 @@
+# #-----------break--------------------
+# count=0
+# while count<=100:
+#     print("loop ",count)
+#     if count==5:
+#         break
+#     #print("loop: ",count)
+#     count+=1
+# print("------the end of  loop---------")
+
+#----------------continue----------------------
+# count=0
+# while count<100:
+#
+#     count = count + 1
+#     #print("loop ",count)
+#     if count==5:
+#         continue###之后不再执行后面语句，返回if count=5上面的语句执行
+#     #count=count+1
+#     print("loop ",count)
+
+
+#
+# print("------the end of  loop---------")
+
+#---------------------------------------错误----------
+# count=0
+# while count<=100:
+#     print("loop ",count)#这样写依旧会打印5
+#     if count==5:#
+#         continue #continue之后跳出本次循环，不再执行其后的语句count+=1,,,,一直是 count==5
+                   #所以输出一直输出print("loop ",5)
+#     count+=1
+# print("------the end of  loop---------")
+
+#--------------------------------------------------------------#
+# count=0
+# while count<=100:
+#     count+=1
+#     if count>5 and count<95:
+#         continue
+#     print("loop ",count)
+# print("----------the end of loop-----------")
+
+
+
+#------------------------练习题-----------------------
+#优化猜年龄游戏，允许用户最多猜三次，中间猜对了，直接跳出循环
+# user_age=20
+# count=0
+# while count<3:
+#     guessage=int(input('>'))#---------必须加上int()转换为整型
+#
+#     if guessage==user_age:
+#         print("恭喜您猜对了")
+#         break
+#     elif guessage < user_age:
+#         print("try smaller")
+#     else:
+#         print("try bigger")
+#     count+=1
+#
+#
+# print("最多只能输入三次")
+
+#优化猜年龄游戏，允许用户最多猜三次，猜了三次后，再问是否还想玩，如果还想玩，如果用户选y，则再允许猜三次，以此往复。
+user_age=20
+count=0
+
+# while count<3:
+#     guessage=int(input('>'))#---------必须加上int()转换为整型
+#
+#     if guessage==user_age:
+#         print("恭喜您猜对了")
+#         break
+#     elif guessage <user_age:
+#         print("您猜的年龄比实际小")
+#     else:
+#         print("您猜测的年龄比实际大")
+#     count+=1
+#     if count==3:
+#         print("最多允许猜三次")
+#         print("是否还想继续玩")
+#
+#         play_again = 'Y'
+#         replay = input("请选择Y or N: ")
+#         if replay == play_again:
+#             count = 0
+#         else:
+#             print("-----end------")
+
+

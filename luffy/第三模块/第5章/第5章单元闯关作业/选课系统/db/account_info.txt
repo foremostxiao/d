@@ -1,0 +1,10 @@
+alex|123|Admin
+egon|123|Teacher
+aa|123|Student
+luojinzhi|123|Teacher
+zz|123|Teacher
+bb|123|Student
+cc|123|Student
+aa|123|Student
+1|123|Student
+qq|123|Student

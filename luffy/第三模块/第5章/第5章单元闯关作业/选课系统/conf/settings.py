@@ -1,0 +1,15 @@
+import os,sys
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
+path_db=os.path.join(BASE_DIR,'db')
+path_account = os.path.join(path_db,'account_info.txt')
+path_class_info = os.path.join(path_db,'class_info')
+path_class_selected_info = os.path.join(path_db,'class_selected_info.txt')
+path_course_info = os.path.join(path_db,'course_info')
+path_course_selected_info = os.path.join(path_db,'course_selected_info.txt')
+path_pay_tuition_info = os.path.join(path_db,'pay_tuition_info')
+path_school_info = os.path.join(path_db,'school_info.txt')
+path_stu_score = os.path.join(path_db,'stu_score')
+path_student_info = os.path.join(path_db,'student_info.txt')
+path_teacher_info = os.path.join(path_db,'teacher_info.txt')

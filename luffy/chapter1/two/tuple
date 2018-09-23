@@ -1,0 +1,51 @@
+#---touple---不允许修改
+# a=('1','2','3')
+# #a[0]='x'
+# print(a)
+# print(hash('xiaolei'))
+
+# str='xiaolei'
+# str[0]='0'
+# print(str)
+
+#hash---明文----密文--
+# 文件签名
+# md5加密
+# 密码验证
+#好比支付宝我们支付的是明文密码，md5加密，在数据库储存是就是密文，
+#单项的
+# s= 'xiaolei'
+# a=123
+# e =[1,23,2]
+# print(dict(e))
+# b = {s:a}
+# print(b)
+# print(list(b))
+# print(str(b))
+# c=str(b)
+# print('c',type(c))
+# d=eval(c)
+# print('d',d)
+# print('d',type(d))
+# #print(dict(b))
+# print(type(b))
+#
+# s1=input()
+# if s1 in s:
+#     print('kkkkkkkkk')
+# ages = (11, 22, 33, 44, 55,['aa','bb'])
+# ages[5][0] = 22
+# print(ages)
+# d = {'key1' : 'value1', 'key2' : 'value2' }
+# print(d.items())
+# for k,v in d.items():
+#     print(k,v)
+# for k in d:
+#     print(k)
+# for k in d.keys():
+#     print(k)
+
+
+li = {'k1':'alex', 'k2':'eric', 'k3':'rain'}
+for i in enumerate(li,100):
+    print(i)

@@ -1,0 +1,11 @@
+INFO:root:So should this
+WARNING:root:And this, too
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too
+08/21/2018 12:05:00 PM This message should go to the log file
+08/21/2018 12:05:00 PM So should this
+08/21/2018 12:05:00 PM And this, too

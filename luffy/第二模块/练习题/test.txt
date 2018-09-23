@@ -1,0 +1,6 @@
+1535708163.56
+2018-08-31
+time.struct_time(tm_year=2018, tm_mon=8, tm_mday=31, tm_hour=17, tm_min=36, tm_sec=3, tm_wday=4, tm_yday=243, tm_isdst=0)
+1535766320.6298008
+2018-09-01
+time.struct_time(tm_year=2018, tm_mon=9, tm_mday=1, tm_hour=9, tm_min=45, tm_sec=20, tm_wday=5, tm_yday=244, tm_isdst=0)

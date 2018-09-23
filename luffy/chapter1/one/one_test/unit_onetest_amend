@@ -1,0 +1,182 @@
+#------------------------导师点评----------------------------------
+# 永远不要相信用户的输入username = input(“username:”).strip()
+#
+# 了解并遵循pep8规范
+#
+# 注释要单独起一行，不要写在后面
+#
+# 代码之间相对独立的逻辑之间空行会提高可读性，不要隔离太多行不紧凑，也不要不隔行可读性差
+#
+# 等号两边空格
+#
+# 不要写重复代码
+#
+# while True:count…..可以合并while count < 3:
+#--------------------------------------以上-------------------------------------------------
+
+#---------升级需求------------------------
+# 可以支持多个用户登录 (提示，通过列表存多个账户信息)
+# 用户3次认证失败后，退出程序，再次启动程序尝试登录时，还是锁定状态（提示:需把用户锁定的状态存到文件里）
+# 用户指同一个账户，累计输错三次密码就锁定
+
+# Python strip() 方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+#
+# 注意：该方法只能删除开头或是结尾的字符，不能删除中间部分的字符。
+
+# user_name = ['xiaolei','xiaoman','lixia']
+# pass_word = ['123','456','789']
+# count=3
+# while count>0:
+#     username = input("用户名：").strip()
+#     password = input("请输入密码：").strip()
+#     if username not in user_name:
+#         print("您输入的用户不存在,请重新输入：")
+#         continue
+#
+#     else:
+#         with open('account_lock.txt','r') as account:
+#             blackuser=account.read()
+#             if username in blackuser:
+#                 print(f"用户{username}被已锁定")
+#                 break
+#
+#             elif username not in blackuser:
+#
+#                 if username in user_name and password == pass_word[user_name.index(username)]:
+#                     print(f"登录成功，欢迎您：{username}")
+#                 #等效替换下面的代码，更加的简洁
+#
+#                 # if username == user_name[0] and password == pass_word[0]:
+#                 #     print(f"登录成功，欢迎您：{username}")
+#                 #     break
+#                 #     # 跳出当前的whlie循环
+#                 # elif username == user_name[1] and password == pass_word[1]:
+#                 #     print(f"登录成功，欢迎您：{username}")
+#                 #     break
+#                 # elif username == user_name[2] and password == pass_word[2]:
+#                 #     print(f"登录成功，欢迎您：{username}")
+#                 #     break
+#                 else:
+#                     count -= 1
+#                     print(f"密码错误，还有{count}次机会重新输入：")
+#
+#                     if count == 0:
+#                         account_lock = open('account_lock.txt', 'a')
+#                         account_lock.write(username)
+#                         account_lock.close()
+#                         print(f"{username}已被锁定")
+#                         break
+#
+#                     continue
+# print("提示：用户三次认证失败后账户将被锁定")
+
+# 用户名：xiaolei
+# 请输入密码：1
+# 密码错误，还有2次机会重新输入：
+# 用户名：xiaoman
+# 请输入密码：1
+# 密码错误，还有1次机会重新输入：
+# 用户名：lixia
+# 请输入密码：1
+# 密码错误，还有0次机会重新输入：
+# lixia已被锁定
+# 提示：用户三次认证失败后账户将被锁定
+
+
+#解决相同用户输错三次密码锁定----------完美解决我的疑惑-----------------------------
+
+# user_name={'xiaolei':{'pass_word':123,'count':3},
+#            'xiaoman':{'pass_word':123,'count':3},
+#            'lixia':{'pass_word':123,'count':3}}
+
+#
+# while True:
+#     username = input("用户名：").strip()
+#     password = int(input("密码： ").strip())
+#     if username not in user_name:
+#         print("您输入的用户名不存在，请重新输入：")
+#         continue
+#
+#     else:
+#         with open('account_lock.txt','r') as account:
+#             blackuser=account.read()
+#             if username in blackuser:
+#                 print(f"用户{username}被已锁定")
+#                 break
+#
+#             else:
+#                 if password == user_name[username]['pass_word']:
+#                     print(f"登录成功，欢迎您{username}")
+#                     break
+#
+#                 else:
+#
+#                     user_name[username]['count'] -= 1
+#                     if user_name[username]['count'] == 0:
+#                         print(f"{username}已被锁定")
+#                         account_lock = open('account_lock.txt', 'a')
+#                         account_lock.write(username)
+#                         account_lock.close()
+#                         break
+#                     else:
+#                         print(f"{username}您还有{user_name[username]['count']}次机会输入")
+#                         continue
+
+
+user_info = {'aa':{'password':123,'count':3},
+             'bb': {'password': 123, 'count': 3},
+             'cc': {'password': 123, 'count': 3}}
+while True:
+    user_name = input('用户名:>')
+    pass_word = int(input('密码:>'))
+    if user_name not in user_info:
+        continue
+    else:
+        file = open('black_name.txt','a')
+        with open('black_name.txt','r') as f_b:
+            f = f_b.read()
+        if user_name in f :
+            print('用户输错过多，被锁定！')
+            f_b.close()
+            break
+        else:
+            if pass_word == user_info[user_name]['password']:
+                print('登录成功，欢迎您！')
+                break
+            else:
+                user_info[user_name]['count'] -= 1
+                print(f"您还有{user_info[user_name]['count']}次机会输入")
+                if user_info[user_name]['count'] == 0:
+                    with open('black_name.txt','w') as f_b:
+                        f = f_b.write(user_name)
+                    print('您输错过多，被锁定！')
+                    f_b.close()
+                    break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

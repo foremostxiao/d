@@ -1,0 +1,73 @@
+# def fun(name):
+#     print('hello',name)
+#     print('my name is black girl...')
+# print(fun)
+# fun('alex')
+
+# def calc(x,y):
+#     res = x**y
+#     print(res)
+# calc(2,2)
+
+# ------- 默认参数------------------------
+# def stu_register(name,age,country,course):
+#     print('-----注册学生信息------')
+#     print('姓名：',name)
+#     print('age:',age)
+#     print('country:',country)
+#     print('course:',course)
+# # 位置参数的输入顺序不可变，-------------------------否则输出顺序就会发生变化
+# stu_register('aa',22,'CN','python')
+# stu_register('bb',21,'CN','java')
+# stu_register('aa',24,'CN','c++')
+
+# 三个Country都是CN，所以可以把country设置为默认参数
+# def stu_register(name,age,course,country='CN'):
+#     print('-----注册学生信息------')
+#     print('姓名：',name)
+#     print('age:',age)
+#     print('country:',country)
+#     print('course:',course)
+# stu_register('aa',22,'python')
+# stu_register('bb',21,'java')
+# stu_register('aa',24,'c++',country='japan')
+
+
+# 非固定参数 如果形参中 出现 一个*， *args ，传递的参数就可以不再是固定个数，传递过来的参数打包成元组。 没有输出（）
+# def stu_register(name,age,*args):
+#     print(name,age,args)
+# stu_register('alex',22)
+
+# 方法二，带*的形参最好放在最后，，否则在实参中必须把参数写成关键参数的形式 age='ss'
+# def stu_register(name,*args,age):
+#     print(name,*args,age)
+# stu_register('alex',22,age='ss')
+
+# 形参中出现两个 ** ,   **kwargs 会把多传入的参数变成一个dict形式，没有输出{} 表示空值
+# def stu_register(name,age,*args,**kwargs):
+#     print(name,age,args,kwargs)
+# stu_register('alex',22,'asd','dd',cound='ss')
+#
+# # 可以再实参指定具体的值
+# d = {'degree':'primary school'}
+# stu_register('alex',22,**d)
+
+
+# 返回值    如果未在函数中指定return,那这个函数的返回值为None
+def stu_register(name,age,course,country='CN'):
+    print('-----注册学生信息------')
+    print('姓名：',name)
+    print('age:',age)
+    print('country:',country)
+    print('course:',course)
+    if age >22:
+        return False   #return 后面的语句不执行
+        print('ssss')
+
+    else:
+        return True
+f = stu_register('aa',24,'c++',country='japan')
+if f:
+    print('注册成功')
+else:
+    print('注册失败')

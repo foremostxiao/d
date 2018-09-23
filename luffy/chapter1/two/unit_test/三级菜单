@@ -1,0 +1,333 @@
+# 数据结构：
+menu = {
+    '北京':{
+        '海淀':{
+            '五道口':{
+                'soho':{},
+                '网易':{},
+                'google':{}
+            },
+            '中关村':{
+                '爱奇艺':{},
+                '汽车之家':{},
+                'youku':{},
+            },
+            '上地':{
+                '百度':{},
+            },
+        },
+        '昌平':{
+            '沙河':{
+                '老男孩':{},
+                '北航':{},
+            },
+            '天通苑':{},
+            '回龙观':{},
+        },
+        '朝阳':{},
+        '东城':{},
+    },
+    '上海':{
+        '闵行':{
+            "人民广场":{
+                '炸鸡店':{}
+            }
+        },
+        '闸北':{
+            '火车站':{
+                '携程':{}
+            }
+        },
+        '浦东':{},
+    },
+    '山东':{},
+}
+# list=[]
+# list.append(menu)
+# list.append(menu)
+# list1 = menu.keys()
+# list2 = menu.values()
+# print(list1)
+# print(list2)
+# print(menu.items())
+# li = list(menu.items())
+#
+# print(li)
+# print(li[0][0])
+# print('---------------------------------')
+# print(li[1])
+# print(li[1][1])
+# print(li[1][1]['闵行'])
+# print(li[1][1]['闵行']['人民广场'])
+# print(li[1][1]['闵行']['人民广场']['炸鸡店'])
+# print(type(li[1][1]))
+# print('------------------------------------')
+# print(li[2])
+# # print(menu)
+# 需求：
+# 可依次选择进入各子菜单
+# 可从任意一层往回退到上一层
+# 可从任意一层退出程序
+# 所需新知识点：列表、字典
+# exit_flag = False
+# 显示一级菜单
+# print(menu)
+# 输出一级目录：
+# for i in menu:
+#     print('\t',i)
+# exit_flag = False
+
+# import sys
+#
+# while True:
+#     for i in menu:
+#         print('\t', i)
+#         choice = input("以上为 一级菜单 请选择(q退出，a返回上一层,若输入有误继续执行输入)>:").strip()
+#         if choice == 'q':
+#             sys.exit(0)
+#         elif choice == 'a':
+#            break
+#         # 判断输入是否在一级目录里面
+#         if choice in menu:
+#
+#             while True:
+#                 # 输出一级目录对应的二级目录
+#                 for i2 in menu[choice]:
+#                     print('\t', i2)
+#                 choice2 = input("以上为 二级菜单 请选择(q退出，a返回上一层，若输入有误继续执行输入)>:").strip()
+#                 if choice2 == 'q':
+#                     sys.exit(0)
+#                 if choice2 == 'a':
+#                     break
+#                 # 判断 输入 是否在二级目录里面
+#                 if choice2 in menu[choice]:
+#
+#                     while True:
+#                         # 输出二级目录对应的三级目录
+#                         for i3 in menu[choice][choice2]:
+#                             print('\t', i3)
+#
+#                         choice3 = input("以上为 三级菜单 请选择(q退出，a返回上一层，若输入有误继续执行输入)>:").strip()
+#
+#                         if choice3 == 'q':
+#                             sys.exit(0)
+#                         if choice3 == 'a':
+#                             break
+#                         # 判断输入是否在 三级目录里面
+#                         if choice3 in menu[choice][choice2]:
+#
+#                             while True:
+#                                 # 输出三级目录下对应的四级目录
+#                                 for i4 in menu[choice][choice2][choice3]:
+#                                     print('\t', i4)
+#
+#                                 choice4 = input("以上为 最后一层 请选择(q退出，a返回上一层，若输入有误继续执行输入)>:").strip()
+#                                 if choice4 == 'q':
+#                                     sys.exit(0)
+#                                 if choice4 == 'a':
+#                                     break
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+#----------------------------列表不可以转字典------------------
+# 需求：
+# 可依次选择进入各子菜单
+# 可从任意一层往回退到上一层
+# 可从任意一层退出程序
+# 所需新知识点：列表、字典
+
+# 1.只用一个while循环，且整体代码量少于15行按完成需求/条25分
+# 2.只用一个while循环，且整体代码量多于15行需求全部完成给90分
+# 3.其他情况按完成需求/条—20分
+# 请选择直辖市/省；选择区域；街道；公司/店铺
+
+# dict_1 = {'1': 'a', '2': 'b', '3': 'c'}
+# print(list(dict_1), end='列表\n')  # 把字典转化为列表后打印
+
+#----------第一次我参考的代码--------------------------
+# while not exit_flag:
+#     for i1 in menu:
+#         print('\t',i1)
+#
+#     choice = input("以上为 一级菜单 请选择(返回上一级:b 退出:q)>>:")
+#     if choice in menu:
+#
+#         # 显示二级菜单
+#         while not exit_flag:
+#             for i2 in menu[choice]:
+#                 print('\t',i2)
+#             choice2 = input("以上为 二级菜单 请选择(返回上一级:b 退出:q)>>: ")
+#             if choice2 in menu[choice]:
+#
+#                 # 显示三级菜单
+#                 if menu[choice][choice2] == '{}':
+#                     break
+#                 while not exit_flag:
+#                     for i3 in menu[choice][choice2]:
+#                         print("\t", i3)
+#                     choice3 = input("以上为 三级菜单 请选择(返回上一级:b 退出:q)>>: ")
+#                     if choice3 in menu[choice][choice2]:
+#
+#                         # 显示四级菜单
+#                         for i4 in menu[choice][choice2][choice3]:
+#                             print("\t", i4)
+#                         choice4 = input("以上为 最后一层 (返回上一级:b 退出:q)>>:")
+#                         if choice4 == "b":
+#                             pass
+#                         elif choice4 == "q":
+#                             exit_flag = True
+#                     if choice3 == "b":
+#                         break
+#                     elif choice3 == "q":
+#                         exit_flag = True
+#             if choice2 == "b":
+#                 break
+#             elif choice2 == "q":
+#                 exit_flag = True
+
+#--------------------------------------------------------------------------------
+
+
+# while True:
+#     for k in menu:
+#         print(k)
+#     choice = input('>:').strip()
+#     if not choice:continue
+#     if choice in menu:
+#         while True:
+#             for k in menu[choice]:
+#                 print(k)
+#             choice2 = input('>:').strip()
+#             if not choice2:continue
+#             if choice2 in menu[choice]:
+#                 while True:
+#                     for k in menu[choice][choice2]:
+#                         print(k)
+#                     choice3 = input('>:').strip()
+#                     if not choice3:continue
+#                     if choice3 in menu[choice][choice2]:
+#                         print("go to",menu[choice][choice2][choice3])
+#                     elif choice3 == 'q':
+#                         exit()
+#                     elif choice3 == 'a':
+#                         break
+#
+#                     else:
+#                         print('节点不存在')
+#             elif choice2 == 'q':
+#                 exit()
+#             elif choice2 == 'a':
+#                 break
+#             else:
+#                 print('节点不存在')
+#     elif choice == 'q':
+#         exit()
+#     elif choice == 'a':
+#         break
+
+#----------------------改进版本---------------------
+
+# current_layer = menu
+# last_layer = []
+# while True:
+#
+#     for k in current_layer:
+#         print(k)
+#     choice = input('>:').strip()
+#     if not choice:continue
+#
+#     if choice in current_layer:
+#         # 进入下一层记录当前层
+#         last_layer.append(current_layer)
+#         print(last_layer)
+#         current_layer = current_layer[choice]
+#
+#     if choice == 'q':
+#         exit()
+#     if choice == 'a':
+#         if len(last_layer) !=0:
+#             current_layer = last_layer.pop()
+#         else:
+#             print('已经是顶层了')
+
+
+
+#
+# for i in menu:
+#     print(i)
+# choice = input('>').strip()
+# if choice in menu:
+#     for i in menu[choice]:
+#         print(i)
+#     choice2 = input('>').strip()
+#     if choice2 in menu[choice]:
+#         for i in menu[choice][choice2]:
+#             print(i)
+
+# 发现有重复内容，不要写重复的代码，
+current_layer = menu
+last_layer = []
+while True:
+
+    for i in current_layer:
+        print(i)
+    choice = input('>').strip()
+    if choice  in current_layer:
+        last_layer.append(current_layer)
+        print(last_layer)
+        current_layer = current_layer[choice]
+
+    elif choice == 'q':
+            break
+    elif choice == 'a':
+        if len(last_layer) != 0:
+            last = last_layer.pop()
+            current_layer = last
+            print(type(current_layer))
+        else:
+            print('已经是第一层了')
+    else:
+        print('输入错误，请重新输入：')
+        continue
+
+# print(len(menu))
+# print("删除第一个元素：",sentence.pop(0)  、pop() 函数用于移除列表中的一个元素（默认最后一个元素），并且返回该元素的值。
+#
+# 语法：list.pop(obj=list[-1])       //默认为 index=-1，删除最后一个列表值。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

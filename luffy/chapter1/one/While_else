@@ -1,0 +1,15 @@
+#while 与 else的搭配：while后面else作用是指，当while循环正常执行完，
+# 中间没有被break中止的话，就会执行else后面的语句
+#while
+#else
+#用于判断程序是否被break过
+count=0
+while count<=5:
+    count+=1
+    if count==6:
+        break
+    print("Loop",count)
+else:
+    print("while循环正常执行完啦")
+print("-----------out of while loop-------------------")
+

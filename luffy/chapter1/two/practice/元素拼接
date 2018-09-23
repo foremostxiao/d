@@ -1,0 +1,11 @@
+
+# 1 请用代码实现：利用下划线将列表的每一个元素拼接成字符串，li=['alex','eric','rain']
+
+li=['alex','eric','rain']
+# # 'list' object has no attribute 'split'
+#li.split('_')
+# print(li)
+#----join（）
+# 以指定字符串作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串
+
+print('_'.join(li))

@@ -1,0 +1,28 @@
+
+# 写代码，有如下元组，请按照功能要求实现每一个功能
+
+tu = ('alex','eric','rain')
+
+
+# 1 计算元组长度并输出
+print(len(tu))
+
+# 2 获取元组的第2个元素，并输出
+print(tu[1])
+
+# 3 获取元组的第1-2个元素，并输出-------顾头不顾尾  star,end,,,实际end-1
+print(tu[0:2])
+
+
+# 4 请使用for输出元组的元素
+for i in tu:
+    print(i)
+
+# 5 请使用for、len、range输出元组的索引
+for index in range(len(tu)):
+    print(index)
+
+# 6 请使用enumrate输出元祖元素和序号（序号从10开始）
+for index,i in enumerate(tu,10):
+    print(index,i)
+s='ahahkkjdkdk'

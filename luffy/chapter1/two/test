@@ -1,0 +1,59 @@
+# list=['1','2','3','a','b','c']
+# print(''.join(list))
+# print('#'.join(list[2:4]))
+# print(list[2:3])
+# print(list[0:4:2])
+
+
+
+# 对元组进行操作
+
+#优点处：用的字典的功能
+# user_info = {'Mike':{ 'password':'123'}, 'Alice':{ 'password':'456'} ,'Neo':{'password':'789'}}
+# username=input()
+# password=input()
+# if username in user_info and password == user_info[username]['password']:  # 如果输入的密码和白名单里用户名对应的密码一样，则登录成功
+#     print('Welcome', username)
+
+#(在本级目录下先创建一个db.txt文件)
+
+dic={'egon1':{'password':'123','count':0},
+    'egon2':{'password':'123','count':0},
+    'egon3':{'password':'123','count':0},}
+count=0
+while True:
+    name=input('name>>: ').strip()
+    if name not in dic:
+        print('用户不存在')
+        continue
+    f=open('db.txt','a')
+    with open('db.txt','r') as f:
+        lock_users=f.read().split('|')
+        if name in lock_users:
+            print('用户%s被锁定,'%name)
+            break
+
+        passwd=input('passwd>>: ')
+        if passwd==dic[name]['password']:
+            print('登陆成功')
+            break
+        else:
+            print('用户名，密码错误')
+            dic[name]['count']+=1
+
+        if dic[name]['count'] > 2:
+            print('次数过多，锁定')
+            with open('db.txt','a') as f:
+                f.write('%s|' %name)
+            break
+
+# str1='p y thon is on the way'
+# str2='n'
+#
+# #在str1中检测字符串中是否含有子字符串str2  str1.index(str2,beg=0,end=len(str1))
+#
+# #如果包含子字符串 返回检测到的索引值
+# print(str1.index(str2))
+#
+# #从索引1开始检测，检测长度为3
+# # print(str1.index(str2,1,3))

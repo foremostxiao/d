@@ -1,0 +1,34 @@
+2018-08-29 16:04:14,507 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:04:38,358 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:04:52,835 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:20:50,792 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:22:11,976 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:22:44,126 - access - ERROR - account [1234] too many login attempts
+2018-08-29 16:22:55,200 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:52:41,100 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:53:44,976 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:54:06,063 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:54:08,580 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:54:27,851 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:54:44,302 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:55:04,483 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:55:52,024 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:56:23,907 - access - ERROR - account [1234] too many login attempts
+2018-09-01 13:56:50,297 - access - ERROR - account [1234] too many login attempts
+09/01/2018 02:13:40 PM how to use the python.
+09/01/2018 02:14:40 PM how to use the python.
+09/01/2018 02:14:40 PM is when this event was logged.
+09/01/2018 02:14:45 PM how to use the python.
+09/01/2018 02:14:45 PM is when this event was logged.
+2018-09-01 14:32:39,252-²âÊÔ-INFO-Start print log
+2018-09-01 14:32:39,264-²âÊÔ-ERROR-account [1234] too many login attempts
+2018-09-01 14:32:39,264-²âÊÔ-WARNING-Something maybe fail.
+2018-09-01 14:32:39,265-²âÊÔ-INFO-Finish
+2018-09-01 14:33:32,307-æµ‹è¯•-INFO-Start print log
+2018-09-01 14:33:32,308-æµ‹è¯•-ERROR-account [1234] too many login attempts
+2018-09-01 14:33:32,308-æµ‹è¯•-WARNING-Something maybe fail.
+2018-09-01 14:33:32,308-æµ‹è¯•-INFO-Finish
+2018-09-01 14:54:40,969-æµ‹è¯•-INFO-Start print log
+2018-09-01 14:54:40,969-æµ‹è¯•-ERROR-account [1234] too many login attempts
+2018-09-01 14:54:40,969-æµ‹è¯•-WARNING-Something maybe fail.
+2018-09-01 14:54:40,969-æµ‹è¯•-INFO-Finish

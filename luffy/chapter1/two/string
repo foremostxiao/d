@@ -1,0 +1,23 @@
+#--创建--
+#单引号、双引号、三引号
+# str=''
+# # 特性，有序、不可变
+s='Hello World'
+
+# #大小写互换
+# print(s.swapcase())
+# #分割
+# s = 'hello world'
+# s.split(' ')
+# print(s)
+# #['hello', 'world']
+# s2= 'hello,world'
+# s2.split(',')
+# print(s2)
+#连接
+
+# print('!'.join(s))
+#
+# print(type('!'.join(s)))
+# #'hi!eva'
+

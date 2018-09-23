@@ -1,0 +1,34 @@
+#first way
+name=input("请输入name：")
+job=input("请输入job：")
+hometown=input("请输入hometown：")
+
+print(f"""
+---------info of {name}---------------
+Name:      {name}
+Job:       {job}
+Hometown:  {hometown}
+------------end------------------------
+""")
+
+#sencond way
+
+name1=input("请输入name：")
+job1=input("请输入job：")
+hometown1=input("请输入hometown：")
+
+print("""
+---------info of %s---------------
+Name1:      %s
+Job1:       %s
+Hometown1:  %s
+------------end------------------------
+"""%(name1,name1,job1,hometown1))
+
+#####测试成功
+
+#s=string
+#d=digit
+#f=float
+
+abs()

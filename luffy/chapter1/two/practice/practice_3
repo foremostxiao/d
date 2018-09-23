@@ -1,0 +1,81 @@
+
+# 写代码，有如下列表，按照要求实现每一个功能
+# #
+li = ['alex', 'eric', 'rain']
+# #
+# 1 计算列表长度并输出
+print(len(li))
+
+# 2 列表中追加元素“seven”，并输出添加后的列表
+li.append('seven')
+print(li)
+
+# 3 请在列表的第1个位置插入元素“Tony”，并输出添加后的列表
+
+li.insert(0,'Tony')
+print(li)
+
+# 4 请修改列表第2个位置的元素为“Kelly”，并输出修改后的列表
+li[1] = 'kelly'
+print(li)
+
+# 5 请删除列表中的元素“eric”，并输出修改后的列表
+li = ['alex', 'eric', 'rain']
+del li[li.index('eric')]
+print(li)
+# del li[1]
+# print(li)
+
+#--------------注意直接删除,,,删除第一个匹配的项
+li = ['alex', 'eric', 'rain']
+li.remove('eric')
+print(li)
+# li.pop(1)
+# print(li)
+
+# 6 请删除列表中的第2个元素，并输出删除的元素的值和删除元素后的列表
+li = ['alex', 'eric', 'rain']
+print(li.pop(1),'\n',li)
+
+# 7 请删除列表中的第3个元素，并输出删除元素后的列表
+li = ['alex', 'eric', 'rain']
+del li[2]
+print(li)
+
+# 7 请删除列表中的第2至4个元素，并输出删除元素后的列表
+li = ['alex', 'eric', 'rain','a','z','s']
+del li[1:3]
+print('7>',li)
+
+# 8 请将列表所有的元素反转，并输出反转后的列表
+li = ['alex', 'eric', 'rain']
+li.reverse()
+print(li)
+
+# 9 请使用for、len、range输出列表的索引
+li = ['alex', 'eric', 'rain']
+# for i in li:
+#     print(li.index(i))
+#
+# li = ['alex', 'eric', 'rain']
+# j = 0
+# while True:
+#     if j < len(li):
+#         print(j)
+#         j +=1
+#     else:
+#         break
+for i in range(len(li)):
+    print(i)
+
+# 10 请使用enumrate输出列表元素和序号（序号从100开始）
+li = ['alex', 'eric', 'rain']
+for index ,i in enumerate(li,100):
+    print(index,i)
+
+
+
+# 11 请使用for循环输出列表的所有元素
+# li = ['alex', 'eric', 'rain']
+# for i in li:
+#     print(i)

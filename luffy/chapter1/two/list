@@ -1,0 +1,151 @@
+# # 1 列表的创建,用方括号表示[ ]
+#
+# name=['xiaolei','xiaoman','lixia','xiaolei']
+#
+# # 2 列表的查询，通过索引值差值，第一位索引为0
+# #倒数第一个
+# print(name[-1])
+# #倒数第二个
+# print(name[-2])
+# # name[name.index(xiaolei)],在name找到子字符串的索引，然后在输出name[0]
+#
+# # #----------
+# #
+# str -- 指定检索的字符串
+# beg -- 开始索引，默认为0。
+# end -- 结束索引，默认为字符串的长度。
+# print(name[name.index('xiaolei')])
+#
+# #统计重复出现的子字符的个数，用count（）
+# # str.count(sub, start= 0,end=len(string))
+# # sub -- 搜索的子字符串
+# # start -- 字符串开始搜索的位置。默认为第一个字符,第一个字符索引值为0。
+# # end -- 字符串中结束搜索的位置。字符中第一个字符的索引为 0。默认为字符串的最后一个位置。
+# print(name.count('xiaolei'))
+#
+# 3 切片 [start：stop：step] 默认step为 1；-----切某段并返回，取某一段输出------
+# 索引为 0到2，顾投不顾尾
+# print(name[0:3])
+# print(name[-3:])
+#
+# # 4 追加，从最后添加 append()；插入，insert()
+# insert() 函数用于将指定对象插入列表的指定位置。
+# list.insert(index, obj)
+# index -- 对象 obj 需要插入的索引位置。
+# obj -- 要插入列表中的对象。
+# 该方法没有返回值，但会在列表指定位置插入对象。
+# name1=['xiaolei','xiaoman','lixia','xiaolei']
+# # 该方法没有返回值，但会在列表指定位置插入对象。
+# #print(name1.insert(0,'haha'))
+# name1.insert(0,'haha')
+# print(name1)
+#
+# # 5 修改，直接赋值
+# name1[1]='xiaoya'
+# print(name1)
+#
+# # 6 删除
+# name2=['xiaolei','xiaoman','lixia','xiaolei']
+#
+# pop() 函数用于移除列表中的一个元素（默认最后一个元素），
+# 并且返回该元素的值。
+# pow(index)
+# print(name2.pop())
+#
+# remove() 函数用于移除列表中某个值的第一个匹配项。
+# list.remove(obj)
+# obj -- 列表中要移除的对象。
+# #该方法 没有返回值 但是会移除列表中的某个值的--------第一个匹配项----------
+# name3=['xiaolei','xiaoman','lixia','xiaolei']
+# name3.remove('xiaolei')
+# print(name3)
+# del 全局性的指令，想删谁就删谁,删除但不返回值
+# del 全局性的指令，想删谁就删谁,删除但不返回值
+# name4=['xiaolei','xiaoman','lixia','xiaolei','haohao','1','2','3']
+# #删全局
+#
+# #del name4
+# # print(name4)
+#
+# # 删某个值
+# del name4[0]
+# print(name4)
+#
+# 删除某段区间, [start：stop：step] ,step默认为1,顾头不顾尾
+# 包括start,stop实际取stop-1
+# # # del name4[0:3]
+# # # print(name4)
+#
+# #包括start,stop实际取stop-1
+# del name4[0:6:2]
+# print(name4)
+#
+#
+# 7 循环
+# name5=['xiaolei','xiaoman','lixia','xiaolei','haohao','1','2','3']
+# #把列表里面的每个值依次赋值给i
+# for i in name5:
+#     print(i,end=' ')
+# #python range() 函数可创建一个整数列表，一般用在 for 循环中。
+# # range(start, stop[, step])
+# # 参数说明：
+# # start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;
+# # stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5
+# # step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)
+# range(start, stop[, step])
+# for i in range(10):
+#     #输出0-9
+#     print(i)
+# # while 和 for循环的区别，while循环可以是死循环，for循环有边界
+#
+# 8 排序
+# n=['a','e','b','c']
+#
+# print(n)
+# #升序排列 sort
+# n.sort()
+# print(n)
+#
+# #降序排列n.reverse()
+# n.reverse()
+# print(n)
+#
+# 9 两个列表进行拼接
+#
+# 直接相加+
+# m1=['a','c''f']
+# m2=['z','x','c']
+# 直接相加+
+# print(m1+m2)
+#
+# 用extend()
+# m1.extend(m2)
+# print(m1)
+#
+# 10 清除 所有 ------------clear()
+# clear() 函数用于清空列表，类似于 del a[:]。
+# list.clear()
+# 该方法没有返回值。
+#
+# 复制 -----------------------copy()
+# copy() 函数用于复制列表，类似于 a[:]。
+# copy()方法语法：list.copy()
+# 返回复制后的新列表。
+#
+# a=['1','2',['x','y']]
+#
+# # 复制
+# b=a.copy()
+# print(a)
+# print(b)
+#
+# # 修改原本列表元素
+# a[0]='a'
+# print(a)
+# print(b)
+#
+# # 修改原本列表子列表,子列表跟着改变
+#
+# a[2][0]='xx'
+# print(a)
+# print(b)

@@ -1,0 +1,143 @@
+
+# test.txt原文 ：python,is,on,the,way
+# f=open('test.txt','a')
+# f=open('test.txt','r',encoding='utf-8')
+
+# f.write("java1234")
+# f.write("aa")
+# f.write("bb")
+# f.write("cc")
+# f.write("dd")
+# print(f.read())
+# f.write("java1234")
+# #
+# # f.close()
+# for i in f:
+#     if 'java1234' in i:
+#         print('4455667')
+
+#---------------
+# print(f.read())
+# f.write('this\nis\nhaiku')    #write(string)
+# print(f.read())
+#------------------------------
+#write(list)
+# line = f.readlines()
+# line[1] = "isn't a\n"
+#
+# f = open('test.txt','w')
+# f.write(line)
+# f.close()
+# f = open('test.txt','r')
+# print(line)
+#------------------------------
+ # 字符与字节
+# print(f.read(0)) # 可以反复调用read(size)方法，每次最多读取size个字符的内容
+# print(f.tell())    #显示指针的移动位置
+# print(f.seek(4))# 字节
+# print(f.tell()) # 当前字节所在位置
+# # f.close()
+# s= [['aa','136','ww'],['bb','135','ss'],['33']]
+# a = ['aa','1','bb']
+# #for i in a:
+# print(','.join(a))
+# for i in range(0,len(a)):
+#     print(i)
+
+
+
+# id_list = [1,2,'4', '5', '6', '7', '8', '9', '10']
+# id_input = str(input('>'))
+# if id_input in id_list:
+#     print('111111')
+# id_touple = (1,2,3,'5','6','7')
+# id_input = str(input('>'))
+# if id_input in id_touple:
+#     print('111111')
+
+#-----读取文件---------------
+#file = open('test.txt','r+',encoding='utf-8')
+#f = file.readlines()
+# print(f)
+# for i in f:
+#     #strip() #方法用于移除字符串头尾指定的字符（默认为空格或换行符）或字符序列。
+#     i = i.strip()
+#     print(i)
+# f1 = file.read()
+# print(f1)
+#print(f)
+
+# print(type(s))
+# #f = file.seek(-1)
+# print(file.tell())
+#
+# file.write('\n'+s)
+#
+# print()
+# choice = input('>')
+
+
+#f = file.readline(2)
+# print(f.strip())
+# print(f.strip())
+#print(f)
+# file.seek(0,2)
+# print(file.tell())
+# s='aa'
+# file.write(s)
+# print(file)
+# print(file.read())
+
+# file = open('test.txt','r+',encoding='utf-8')
+# f = file.readlines()
+# for i in f:
+#     if i == '\n':
+#         i = i.strip('\n')
+#
+
+# 占硬盘的方式修改
+# import os
+# file = open('test.txt','r',encoding='utf-8')
+# new_file = open('newtest.txt','w+',encoding='utf-8')
+# # print(file.read())
+# for line in file:
+#     if 'Alex' in line:
+#         line = line.replace('Alex','lele')#(old ,new)
+#     if line == '\n':
+#         line = line.strip('\n') #删除 原文件中的 空行
+#
+#     # 这样存入新文件原有不同行的数据都会在同一行显示
+#     #line = line.strip() #（移除默认为空格或换行符）每一行
+#     new_file.write(line)
+# file.close()
+# new_file.close()#把新文件名字改成原文件 的名字，就把之前的覆盖掉了
+# os.replace('newtest.txt','test.txt')#（旧字符串） 替换成 new(新字符串)
+
+# 如果想把原文件 读取出来修改后生成的新文件 （原文件的内容没有发生变化）
+# 此时想把新文件替换掉就的原文件 ，用重命名的方法
+# import os #写在开头
+#
+# os.replace(new_file,file)#把新文件名字改成原文件 的名字，就把之前的覆盖掉了
+# ,windows使用os.replace # 帮助文档说明replace会覆盖原文件linux使用 os.rename
+
+
+
+
+# 占内存的方式修改
+data_list = []
+file = open('test.txt','r+',encoding='utf-8')
+f = file.readlines()
+print(len(f)) # 判断有多少行
+for line in f:
+    if 'Alex' in line:
+        line = line.replace('Alex','lele')#(old ,new)
+    if line == '\n':
+        line = line.strip('\n')
+    data_list.append(line)
+# 删除原文件的内容
+file.seek(0)
+file.truncate()
+for line in data_list:
+    # 上一个for循环并没有删除每一行自带的换行符，所以写入时不需要加换行符
+    file.write(line)
+file.close()

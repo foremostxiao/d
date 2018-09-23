@@ -1,0 +1,120 @@
+#------------------------------------------单分支--------------------------------------------
+# age_of_you=25
+# if age_of_you>25:
+#     print("time to find a bf.")
+# print("-----haha-----")
+#
+# #——---------------------------------------双分支-------------------------------------
+# age_of_you1=25
+# if age_of_you1>25:
+#     print("time to find a bf.")
+# else:
+#     print("还可以再谈几次 ")
+#
+# #双分支########Ctrl+/,,,快速注释，，，，，快速解除注释ctrl+/
+# ####
+# user_name="xiaolei"
+# pass_word="123456"
+# username=input("username: ")
+# password=input("password: ")
+# if username==user_name and password==pass_word:
+#     print("welcome: ",username)
+# else:
+#     print("The wrong of username or password")
+
+#练习：输入姓名、性别、判断如果是女生，打印我喜欢女生，否则，打印一起来打游戏！
+
+# name=input("请输入姓名：")
+# sex=input("请输入性别： ")
+# if sex=="女" or sex=="female":
+#     print("我喜欢女生 ")
+# else:
+#     print("一起游戏")
+
+#输入姓名、性别、年龄，判断如果是女生且年龄小于28岁，打印我喜欢女生，否则，打印姐弟恋也很好呀！
+
+# name1=input("请输入姓名：")
+# sex1=input("请输入性别： ")
+# age1=input("请输入年龄： ")
+# if sex1=="女":
+#     if age1<'28':##逻辑运算相同类型的才可以在一起比较
+#         print("我喜欢女生 ")
+#     else:
+#         print("姐弟恋也很好呀")
+# else:
+#     print()
+
+#输入姓名、性别、判断如果是女生且年龄小于28岁，打印我喜欢女生，否则，打印姐弟恋也很好呀！如果是男生打印一起来游戏
+# name1=input("请输入姓名：")
+# sex1=input("请输入性别： ")
+# age1=input("请输入年龄： ")
+# if sex1=="女":
+#     if age1<'28':##逻辑运算相同类型的才可以在一起比较
+#         print("我喜欢女生 ")
+#     else:
+#         print("姐弟恋也很好呀")
+# else:
+#     print("一起来play")
+###--------------=----------------------------------多分支----------------------------
+######猜年龄
+# age=18
+# userage=int(input("请输入猜测的女生年龄："))
+# if userage>age:
+#     print("您猜的年龄比实际大")
+# elif userage<age:
+#     print("您猜的年龄比实际小")
+# else:
+#     print("恭喜您猜对了！")
+
+##匹配成绩的小程序
+##方法一
+# score=float(input("请输入您的分数（百分制）："))
+# if  score<=100 and score>=90:
+#     print("A")
+# elif score<=89 and score>=80:
+#     print("B")
+# elif score<=79 and score>=60:
+#     print("C")
+# elif score<=59 and score>=40:
+#     print("D")
+# else :
+#     print("E")
+#方法二更简洁一点
+score=float(input("请输入您的分数（百分制）："))
+if score>100:
+    print("分数最多为100")
+elif score>=90:
+    print("A")
+elif score>=80:
+    print("B")
+elif score>=60:
+    print("C")
+elif score>=40:
+    print("D")
+elif score>=0:
+    print("E")
+else:
+    print("分数最低为0")
+
+
+
+#直接使用range(n)就可以产生0~（n-1）的序组。
+
+# for i in range(5):
+#     print(i,end=" ")  #输出：[0 1 2 3 4]85
+
+# print("\n")
+# #可以使用range(n,m)的形式就会产生n到m-1的内容。
+# for i in range(1,5):80
+#     print(i,end=" ")   #输出：[1 2 3 4]
+# print("\n")
+# # range(n,m,step),,step默认为1，，n默认为0
+# for i in range(1,5,2):
+#
+#     print(i,end=" ")    #输出：[1 3]
+#
+#
+
+# aTuple=('python','is','on','the''way')
+# print("输出元组：",aTuple)
+# print("输出列表：",list(aTuple))

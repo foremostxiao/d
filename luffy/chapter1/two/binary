@@ -1,0 +1,21 @@
+# print(2**8)
+# # bin() 返回一个整数 int 或者长整数 long int 的二进制表示。
+# print(bin(20))
+#
+# print(13.e2)
+# print(1+2j)
+#
+#
+# print(bin(20))
+# #0b10100----2^4+2^2=20
+# # 十六进制
+# print(hex(20))
+# #0x14----16+4=20
+# # 四个二进制数对应一个十六进制
+
+s = '路飞'
+
+
+print(s)
+name = r'l\thf'
+print(name)

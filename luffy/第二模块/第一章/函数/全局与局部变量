@@ -1,0 +1,30 @@
+
+# 全局变量
+# name = 'alex'
+# def change_name(name):
+#     print('before change:',name)
+#     name = 'a man who has a car called Tesla'
+#     print('after change:',name)
+# change_name(name)
+# print('To see the change out of:',name)
+
+# before change: alex
+# after change: a man who has a car called Tesla
+# To see the change out of: alex
+
+# 局部变量
+
+name = 'alex' # 全局变量
+def change_name():
+
+    name = 'a man who has a car called Tesla'  # 局部变量
+    print('after change:',name)
+change_name()
+print('To see the change out of:',name)
+
+# after change: a man who has a car called Tesla
+# To see the change out of: alex
+
+# 函数里面 name定义 没有 可以调用函数外的，，，，函数外边name没有定义，不可以调用函数里面的定义的 name
+
+#除非在函数里面定义global 一般不这样做

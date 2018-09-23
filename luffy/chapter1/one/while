@@ -1,0 +1,80 @@
+#猜年龄游戏，允许用户最多猜三次
+age=18
+
+i = 0
+while i < 3:
+    guess_age = int(input("请输入您猜测的年龄："))
+
+    if guess_age == age:
+        print("恭喜您猜对了")
+        break
+
+    elif guess_age < age:
+        print("您猜的年龄比实际小")
+    else:
+        print("您猜测的年龄比实际大")
+    i+=1
+print("最多只能猜三次")
+
+#打印1到100的偶数
+# a=0
+# while a<=100:
+#     print(a)
+#     a+=2
+# print("0-100之间的偶数已打印出，请核对")
+
+#第二种方法 ：
+
+# count=0
+# while count<=100:
+#     if count % 2==0:
+#         print(count)
+#         count+=1
+#
+# print("the end")
+
+
+
+
+#循环打印   1-100，第50次不打印，第60-80次打印对应值的平方
+# #-----dead loop  -- --------无限循环打印1-100第50次不打印，第60-80次打印对应值的平方------------------
+# a=0
+#
+# while True :
+#     a=a+1
+#     b=1
+#     if a ==50:
+#         while b<=100:
+#             print("打印为空")
+#             b=b+1
+#     elif a>=60 and a<=80:
+#         while b<=100:
+#             print(b**2)
+#             b=b+1
+#     else:
+#         while b<=100:
+#             print(b)
+#             b=b+1
+# print("haha")
+
+#------------------打印1-100，第50次不打印，第60-80次打印对应值的平方--------------------------
+# count=1
+# while count<=100:
+#
+#     if count==50:
+#         pass
+#     elif count>=60 and count<=80:
+#         print(count**2)
+#     else:
+#         print(count)
+#     count+=1
+# print("-------the end of loop-------------")
+
+
+
+# import sys
+# import random
+# print (random.choice("学习Python") )
+#
+# print (random.choice(['JGood', 'is', 'a', 'handsome','boy']))
+# print (random.choice(('Tuple','List', 'Dict')))
